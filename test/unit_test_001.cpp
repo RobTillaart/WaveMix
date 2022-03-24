@@ -93,7 +93,7 @@ unittest(test_mix)
   wm.setPercentage(25);
   for (int i = 0; i < 10; i++)
   {
-    assertEqualFloat(3 + 0.25 * i, wm.mix(i, 3), 0.001);
+    assertEqualFloat(3 + 0.25 * i, wm.mix(i, 4), 0.001);
   }
 }
 

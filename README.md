@@ -29,10 +29,30 @@ Differences
 
 The main functions of the WaveMix 
 
+- **explicit WaveMix()** Constructor
+- **void  setWeight(float weight1, float weight2)** set the weight of the channels A and B. The weights do not need to be normalized, so one can use e.g **setWeight(7, 13)** w1 >= 0 && w2 >= 0 && (w1+w2) > 0
+- **float getW1()** return the normalized weight for channel A.
+- **float getW2()** return the normalized weight for channel B.
+- **void  setPercentage(float percentage)** sets the weight for channel A preferably to 0 <= percentage <= 100. Channel B will have 100 - percentage.
+- **void  setGain(float gain)** sets the gain factor.
+An important use of gain is to amplify weak signals but one can also use it as a modulator of a signal. See examples.
+- **float getGain()** return the gain set.
+- **float mix(float s1, float s2 = 0)** returns the weighted average of signal1 and signal2. Signal2 is made optional to allow single signal processes e.g. modulation by **setGain()**.
+
+
+### About weights
+
+**setWeight()** typically has positive weights, e.g. **setWeight(7, 13)**
+counts A for 7/20 part and B for 13/20 part. 
+It is also possible to use one or two negative weights. 
+Using negative weights means the signal is inverted before added. 
+E.g. **setWeight(-1, 0)** would effectively invert signal A. 
+Weights cannot be used to amplify the signal, use **setGain()** for that.
+
 
 ## Operation
 
-
+See examples.
 
 ## Future ideas
 

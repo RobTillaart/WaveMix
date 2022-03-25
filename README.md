@@ -15,7 +15,9 @@ WaveMix is an Arduino library to mix two signals (A and B) with an adaptive weig
 
 WaveMix is a very simple library to mix two signals (A and B) with an adaptive weight.
 
-Depending on the weights applied the output signal (O) looks more on signal A or on signal B.
+Depending on the weights applied the output signal (O) looks more on signal A or on signal B. A gain can be applied to amplify weak signals 
+or to be used for modulation.
+
 
 Inspired by - https://www.codeproject.com/Articles/5323200/On-how-to-mix-two-signals-by-using-Spectral-Foreca
 
@@ -24,13 +26,12 @@ Differences
 - WaveMix works on streams of measurements too.
 
 
-
 ## Interface
 
 The main functions of the WaveMix 
 
 - **explicit WaveMix()** Constructor
-- **void  setWeight(float weight1, float weight2)** set the weight of the channels A and B. The weights do not need to be normalized, so one can use e.g **setWeight(7, 13)** w1 >= 0 && w2 >= 0 && (w1+w2) > 0
+- **void  setWeight(float weight1, float weight2)** set the weight of the channels A and B. The weights do not need to be normalized, so one can use e.g **setWeight(7, 13)** See below.
 - **float getW1()** return the normalized weight for channel A.
 - **float getW2()** return the normalized weight for channel B.
 - **void  setPercentage(float percentage)** sets the weight for channel A preferably to 0 <= percentage <= 100. Channel B will have 100 - percentage.
@@ -42,11 +43,12 @@ An important use of gain is to amplify weak signals but one can also use it as a
 
 ### About weights
 
-**setWeight()** typically has positive weights, e.g. **setWeight(7, 13)**
+**setWeight()** typically uses positive weights, e.g. **setWeight(7, 13)**
 counts A for 7/20 part and B for 13/20 part. 
 It is also possible to use one or two negative weights. 
-Using negative weights means the signal is inverted before added. 
-E.g. **setWeight(-1, 0)** would effectively invert signal A. 
+Using negative weights means effectively the input value is inverted before it is added. 
+E.g. **setWeight(-1, 0)** would effectively invert signal A.
+Only restriction to the weights is that the sum of the weights may not be zero.
 Weights cannot be used to amplify the signal, use **setGain()** for that.
 
 
@@ -54,14 +56,18 @@ Weights cannot be used to amplify the signal, use **setGain()** for that.
 
 See examples.
 
+
 ## Future ideas
 
 - make a N channel variant.
-- modulator
-  - 3rd signal? ==> adjust weight runtime.
-  - separate modulator class?
-- add gain()
-- add (fixed) offset
+- add **addSignal(channel, value)**, allow update of channels at a
+different frequency.
+- add **getValue()**, read the current output given the value of the 
+channels.
+- add **void setOffset(float)** and ** void getOffset()**
+
+
+#### low
 - add increment() / decrement() ?
   - percentages
 

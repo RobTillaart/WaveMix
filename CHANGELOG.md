@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - updated readme.md
+- removed constrains on weight and percentage
 
 ### Fixed
 

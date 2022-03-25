@@ -34,7 +34,7 @@ void WaveMix::setPercentage(float percentage)
 
 float WaveMix::mix(float s1, float s2)
 {
-  // are these optimizations efficient?
+  //  are these optimizations efficient?
   if (_gain == 0) return 0;
   if (_weight[0] == 0) return s2 * _gain;
   if (_weight[1] == 0) return s1 * _gain;

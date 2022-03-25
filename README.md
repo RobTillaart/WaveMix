@@ -70,6 +70,7 @@ See examples.
 
 ## Future ideas
 
+
 #### 0.2.0
 
 - make a N channel variant.
@@ -81,13 +82,13 @@ See examples.
   - add **float getWeight(int channel)**
   - add **WaveMix(int channels = 8)** constructor to set the nr of channels.
   - update just to 8 channels max?
-  - or do we need **WaveMix2()**, **WaveMix4()**, **WaveMix8()**, **WaveMix16()**, **WaveMix24()**, **WaveMix32()** class?
-  - more channels will be (much) slower so 2,4,8 makes sense.
+  - or do we need **WaveMix2()**, **WaveMix4()**, **WaveMix8()**, or even **WaveMix16()**, **WaveMix24()**, **WaveMix32()** class?
+  - parametrized?
 
-**WaveMix4()**, **WaveMix8()** seems feasible.
+More channels will be (much) slower so **WaveMix4()**, **WaveMix8()** seems to be feasible.
 
-  
-#### medium
+
+#### Medium
 
 - add **void setOffset(float)** 
 - add **float getOffset()**
@@ -96,7 +97,7 @@ See examples.
   - add **setMinimum(float)**
 
 
-#### low
+#### Low
 
 - dynamic weights
   - add **increment(float)**

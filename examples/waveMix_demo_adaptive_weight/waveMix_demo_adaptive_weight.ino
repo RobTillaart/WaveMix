@@ -40,7 +40,7 @@ void loop()
     }
     wm.setPercentage(perc);
   }
-  delay(10);
+  // delay(10);
 }
 
 

@@ -1,7 +1,7 @@
 //
 //    FILE: WaveMix.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.1.0
+// VERSION: 0.1.1
 // PURPOSE: WaveMix library for Arduino
 //     URL: https://github.com/RobTillaart/WaveMix
 //
@@ -29,13 +29,6 @@ void WaveMix::setPercentage(float percentage)
 {
   _weight[0] = percentage * 0.01;
   _weight[1] = 1.0 - _weight[0];
-}
-
-
-void  WaveMix::setGain(float gain)
-{
-  if (gain < 0) _gain = 0;
-  else _gain = gain;
 }
 
 

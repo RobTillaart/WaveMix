@@ -18,22 +18,21 @@ class WaveMix
 public:
   explicit WaveMix();
 
-  //  w1 >= 0 && w2 >= 0 && (w1+w2) > 0
+  //  weight1 + weight2 != 0
   void  setWeight(float weight1, float weight2);
   float getW1() { return _weight[0]; };
   float getW2() { return _weight[1]; };
-  //  0 <= percentage <= 100
+  //  preferably 0 <= percentage <= 100
   void  setPercentage(float percentage);
-  
-  //  0.0 <= gain
-  void  setGain(float gain);
+
+  void  setGain(float gain) { _gain = gain; };
   float getGain() { return _gain; };
 
   float mix(float s1, float s2 = 0);
 
 
 private:
-  // prep multi-channel
+  //  prepare multi-channel
   float _weight[2] = { 0.5, 0.5 };
   float _gain    = 1.0;
   

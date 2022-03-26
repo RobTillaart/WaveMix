@@ -45,6 +45,11 @@ See examples.
 Signal2 is made optional to allow single signal processes e.g. modulation by **setGain()**.
 
 
+## Operation
+
+See examples.
+
+
 #### Weights
 
 **setWeight()** typically uses positive weights, e.g. **setWeight(7, 13)**
@@ -61,11 +66,6 @@ Weights cannot be used to amplify the signal in absolute sense, use **setGain()*
 By constantly updating the gain (0..max) one can implement **Amplitude Modulation**.
 
 When the gain is negative, the output is effectively inverted.
-
-
-## Operation
-
-See examples.
 
 
 ## Future ideas

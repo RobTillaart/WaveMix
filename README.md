@@ -45,7 +45,7 @@ See examples.
 Signal2 is made optional to allow single signal processes e.g. modulation by **setGain()**.
 
 
-### About weights
+#### Weights
 
 **setWeight()** typically uses positive weights, e.g. **setWeight(7, 13)**
 counts A for 7/20 part and B for 13/20 part. 
@@ -57,8 +57,8 @@ Only restriction to the weights is that the sum of the weights may not be zero.
 
 #### Amplification
 
-Weights cannot be used to amplify the signal, use **setGain()** for that.
-By constantly updating the gain one can implement **Amplitude Modulation**.
+Weights cannot be used to amplify the signal in absolute sense, use **setGain()** for that.
+By constantly updating the gain (0..max) one can implement **Amplitude Modulation**.
 
 When the gain is negative, the output is effectively inverted.
 
@@ -74,7 +74,7 @@ See examples.
 #### 0.2.0
 
 - make a N channel variant.
-  - add **setSignal(uint8_t channel, float value)** allow update of channels at a different frequency.
+  - add **setValue(uint8_t channel, float value)** allow update of channels at a different frequency.
   - add **getValue()**, read the current output given the value of the channels. OR
   - add **getValue(uint8_t mask = 0xFF)**, read the current output given the value of selected channels.
   - add **setMask(uint8_t mask = 0xFF)**, select channels. ease of use?  **getValue(mask)** still needed?

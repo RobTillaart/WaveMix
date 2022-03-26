@@ -25,8 +25,11 @@ public:
   //  preferably 0 <= percentage <= 100
   void  setPercentage(float percentage);
 
-  void  setGain(float gain) { _gain = gain; };
+  void  setGain(float gain = 1) { _gain = gain; };
   float getGain() { return _gain; };
+
+  void  setOffset(float offset = 0) { _offset = offset; };
+  float getOffset() { return _offset; };
 
   float mix(float s1, float s2 = 0);
 
@@ -34,6 +37,7 @@ public:
 private:
   float _weight[2] = { 0.5, 0.5 };
   float _gain      = 1.0;
+  float _offset    = 0.0;
 
 };
 

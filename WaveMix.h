@@ -3,8 +3,8 @@
 //    FILE: WaveMix.h
 //  AUTHOR: Rob Tillaart
 // VERSION: 0.1.1
-// PURPOSE: an Arduino library to mix two signals (A and B) with an adaptive weight.
-//     URL: https://github.com/RobTillaart/CountDown
+// PURPOSE: Arduino library to mix two signals (A and B) with an adaptive weight.
+//     URL: https://github.com/RobTillaart/WaveMix
 //
 
 
@@ -32,10 +32,9 @@ public:
 
 
 private:
-  //  prepare multi-channel
   float _weight[2] = { 0.5, 0.5 };
-  float _gain    = 1.0;
-  
+  float _gain      = 1.0;
+
 };
 
 

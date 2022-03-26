@@ -74,18 +74,20 @@ See examples.
 #### 0.2.0
 
 - make a N channel variant.
-  - add **addSignal(int channel, float value)** allow update of channels at a different frequency.
+  - add **setSignal(uint8_t channel, float value)** allow update of channels at a different frequency.
   - add **getValue()**, read the current output given the value of the channels. OR
   - add **getValue(uint8_t mask = 0xFF)**, read the current output given the value of selected channels.
-  - note **mix()** can be implemented with the two above functions.
-  - add **setWeight(int channel, float weight)** need internal array of weights and \_sum
-  - add **float getWeight(int channel)**
-  - add **WaveMix(int channels = 8)** constructor to set the nr of channels.
-  - update just to 8 channels max?
+  - add **setMask(uint8_t mask = 0xFF)**, select channels. ease of use?  **getValue(mask)** still needed?
+  - add **getMask()**, read back \_mask;
+  - note that **mix()** can be implemented with the above functions.
+  - add **setWeight(uint8_t channel, float weight)** need internal array of weights and \_sum
+  - add **float getWeight(uint8_t channel)**
+  - add constructor **WaveMix(uint8_t channels = 8)** with parameter to set the nr of channels?
   - or do we need **WaveMix2()**, **WaveMix4()**, **WaveMix8()**, or even **WaveMix16()**, **WaveMix24()**, **WaveMix32()** class?
-  - parametrized?
 
-More channels will be (much) slower so **WaveMix4()**, **WaveMix8()** seems to be feasible.
+**WaveMix4()** and **WaveMix8()** seems to be realistic in terms of performance.
+**WaveMix8()** can be used for 2-8 channels, using a uint8_t mask.
+More channels will be much slower, so upon request the 16 and 32 variant?
 
 
 #### Medium
@@ -95,10 +97,18 @@ More channels will be (much) slower so **WaveMix4()**, **WaveMix8()** seems to b
 - add top clipping
   - add **setMaximum(float)**
   - add **setMinimum(float)**
+- performance test.
 
 
 #### Low
 
+- think of integer version
+  - performance
+  - integer weights
+  - math in **int32_t** with last moment float conversion 
+- Templated version
+  - float vs double vs int
+  - maybe upon request.
 - dynamic weights
   - add **increment(float)**
   - add **decrement(float)**

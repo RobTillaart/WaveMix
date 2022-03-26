@@ -14,8 +14,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - updated **mix()** code
-- default setGain parameter = 1.0
-- default setPercentage parameter = 50
 
 ### Fixed
 - set gain explicit in constructor.

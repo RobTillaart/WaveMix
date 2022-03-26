@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.1.2] - 2022-03-26
 
 ### Added
-- add **setOffset(offset = 0)** and **getOffset()**
+- add **setOffset(offset)** and **getOffset()**
 - add example
 
 ### Changed
